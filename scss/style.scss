@@ -1,0 +1,55 @@
+@import "variables";
+@import "mixin";
+@import "placeholders";
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: $white;
+}
+body {
+  margin: 0;
+}
+.header {
+  @extend %headerPH;
+}
+
+.section1 {
+  @extend %section1PH;
+}
+.section2 {
+  @include dir(rrow);
+  @extend %section23;
+  background-color: whitesmoke;
+}
+.section3 {
+  @include dir(row);
+  @extend %section23;
+  background-color: $white;
+}
+.section4 {
+  @extend %section4PH;
+}
+.section5 {
+  margin-top: $spaceSection;
+  background-color: whitesmoke;
+  @extend %sectionHeader;
+  @extend %section55;
+}
+.section6 {
+  @extend %section6PH;
+}
+
+.section7 {
+  @extend %section7PH;
+}
+.section8 {
+  @extend %section8PH;
+}
+.section9 {
+  @extend %section9PH;
+}
+.footer {
+  @extend %footerPH;
+}

@@ -1,0 +1,58 @@
+@mixin center($dir: h, $desc: row) {
+  display: flex;
+  @if $dir == h {
+    justify-content: center;
+  } @else if $dir == v {
+    align-items: center;
+  } @else {
+    justify-content: center;
+    align-items: center;
+  }
+  @if $desc == rcol {
+    flex-direction: column-reverse;
+  } @else if $desc == rrow {
+    flex-direction: row-reverse;
+  } @else if $desc == col {
+    flex-direction: column;
+  } @else {
+    flex-direction: row;
+  }
+}
+@mixin dir($desc) {
+  display: flex;
+  @if $desc == rcol {
+    flex-direction: column-reverse;
+  } @else if $desc == rrow {
+    flex-direction: row-reverse;
+  } @else if $desc == col {
+    flex-direction: column;
+  } @else {
+    flex-direction: row;
+  }
+}
+@mixin btn($height, $width, $bkCol, $col: white, $size: 1rem) {
+  height: $height;
+  width: $width;
+  background-color: $bkCol;
+  color: $col;
+  border: none;
+  font-size: $size;
+  cursor: pointer;
+  border-radius: 10px 10px 10px 10px;
+}
+@mixin divIcon($Url, $wid: 2.5rem, $heit: 2.5rem, $brdrRadius: 10px) {
+  background-image: url($Url);
+  width: $wid;
+  height: $heit;
+  border-radius: $brdrRadius $brdrRadius $brdrRadius $brdrRadius;
+  background-size: contain;
+  background-color: blue;
+}
+
+.section2__img {
+  @include center(hr);
+  width: 50%;
+  img {
+    width: 100%;
+  }
+}
